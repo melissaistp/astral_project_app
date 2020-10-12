@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export default () => (
   <div id="container_all">
     <div id="messageBox">
-      <button></button>
+      Please connect to the dreamscape and use the following unique astral plane code:
+      <a href="/friends" id="connect">connect</a>
     </div>
   </div>
   // <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">

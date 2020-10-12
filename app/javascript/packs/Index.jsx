@@ -12,3 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(document.createElement("div"))
   );
 });
+
+window.onload = function () {
+  let myPix = ['dreamscape.jpg', 'dreamscape2.jpg', 'dreamscape3.jpg'];
+  let randomNumber = Math.floor(Math.random() * myPix.length);
+  document.querySelector('#container_all').style.backgroundImage = `url('assets/${myPix[randomNumber]}')`;
+  console.log(container.style.backgroundImage);
+}
