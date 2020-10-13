@@ -126,10 +126,10 @@ class NewFriend extends React.Component {
             </datalist>
 
             <label htmlFor="friendLikeability">How close are you to this person?<p id="scale">Not so close ⟵⟶ Quite close</p></label>
-            <input type="range" min="0" max="10.1" name="likeability" id="friendLikeability" onChange={this.onChange}/>
+            <input type="range" min="0" max="10" step="1" name="likeability" id="friendLikeability" onChange={this.onChange}/>
 
             <label htmlFor="friendMessage">Personalized message for your friend upon entry to the dream</label>
-            <textarea name="message" id="friendMessage" rows="3" cols="50" onChange={this.onChange}/>
+            <textarea name="message" id="friendMessage" rows="6" cols="50" onChange={this.onChange}/>
             <button type="submit" id="createConnection">
               Create Connection
             </button>
