@@ -6,7 +6,8 @@ class NewFriend extends React.Component {
       super(props);
       this.state = {
         alias: "",
-        experience: ""
+        experience: "",
+        // instruction: ""
       };
   
       this.onChange = this.onChange.bind(this);
@@ -27,9 +28,9 @@ class NewFriend extends React.Component {
     onSubmit(event) {
       event.preventDefault();
       const url = "/api/v1/friends/create";
-      const { alias, experience, likeability, sign, image, message } = this.state;
+      const { alias, experience, likeability, sign, image, message } = this.state; //add other params here?
   
-      if (alias.length == 0 || experience.length == 0 )
+      if (alias.length == 0 || experience.length == 0 ) //include checks for other params?
         return;
   
       const body = {
@@ -39,6 +40,7 @@ class NewFriend extends React.Component {
         sign,
         image,
         message
+       // instruction: instruction.replace(/\n/g, "<br> <br>")
       };
   
       const token = document.querySelector('meta[name="csrf-token"]').content;
