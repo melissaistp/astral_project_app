@@ -67,7 +67,7 @@ class Friends extends React.Component {
             You have the ability to customize that person's dream experience and to kick them from your dreamscape
             if you need to.
           </div>
-          <a href="https://theastralproject.herokuapp.com/" id="close" role="button">close connection</a>
+          <a href="/" id="close" role="button">close connection</a>
           <div id="friendList">
               {friends.length > 0 ? allFriends : noFriend}
           </div>
