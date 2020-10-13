@@ -76,30 +76,30 @@ class NewFriend extends React.Component {
             <div id="radioButtons">
               <div className="radioCol">
                 <div className="radioSet">
-                  <input type="radio" name="experience" id="friendExperience" value="realistic" required onChange={this.onChange}/>
-                  <label for="realistic">Realistic</label>
+                  <input type="radio" name="experience" id="friendExperience" value="realistic.png" required onChange={this.onChange}/>
+                  <label for="realistic.png">Realistic</label>
                 </div>
                 <div className="radioSet">
-                  <input type="radio" name="experience" id="friendExperience" value="pleasant" required onChange={this.onChange}/>
-                  <label for="pleasant">Pleasant and plausible</label>
+                  <input type="radio" name="experience" id="friendExperience" value="pleasant.png" required onChange={this.onChange}/>
+                  <label for="pleasant.png">Pleasant and plausible</label>
                 </div>
                 <div className="radioSet">
-                  <input type="radio" name="experience" id="friendExperience" value="pleasantIncomp" required onChange={this.onChange}/>
-                  <label for="pleasantIncomp">Pleasant and incomprehensible</label>
+                  <input type="radio" name="experience" id="friendExperience" value="pleasantincomp.png" required onChange={this.onChange}/>
+                  <label for="pleasantincomp.png">Pleasant and incomprehensible</label>
                 </div>
                 <div>
-                  <input type="radio" name="experience" id="friendExperience" value="incomprehensible" required onChange={this.onChange}/>
-                  <label for="incomprehensible">Truly incomprehensible</label>
+                  <input type="radio" name="experience" id="friendExperience" value="incomprehensible.png" required onChange={this.onChange}/>
+                  <label for="incomprehensible.png">Truly incomprehensible</label>
                 </div>
               </div>
               <div className="radioCol">
                 <div className="radioSet">
-                  <input type="radio" name="experience" id="friendExperience" value="flying" required onChange={this.onChange}/>
-                  <label for="flying">Flying</label>
+                  <input type="radio" name="experience" id="friendExperience" value="flying.png" required onChange={this.onChange}/>
+                  <label for="flying.png">Flying</label>
                 </div>
                 <div className="radioSet">
-                  <input type="radio" name="experience" id="friendExperience" value="flyingNightmare" required onChange={this.onChange}/>
-                  <label for="flyingNightmare">Flying but nightmarish</label>
+                  <input type="radio" name="experience" id="friendExperience" value="flyingnightmare.png" required onChange={this.onChange}/>
+                  <label for="flyingnightmare.png">Flying but nightmarish</label>
                 </div>
                 <div className="radioSet">
                   <input type="radio" name="experience" id="friendExperience" value="nightmare.png" required onChange={this.onChange}/>
