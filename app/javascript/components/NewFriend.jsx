@@ -102,8 +102,8 @@ class NewFriend extends React.Component {
                   <label for="flyingNightmare">Flying but nightmarish</label>
                 </div>
                 <div className="radioSet">
-                  <input type="radio" name="experience" id="friendExperience" value="bad" required onChange={this.onChange}/>
-                  <label for="bad">Honestly just bad</label>
+                  <input type="radio" name="experience" id="friendExperience" value="nightmare.png" required onChange={this.onChange}/>
+                  <label for="nightmare.png">Honestly just bad</label>
                 </div>
               </div>
             </div>

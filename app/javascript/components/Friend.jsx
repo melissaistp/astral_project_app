@@ -65,6 +65,9 @@ class Friend extends React.Component {
 
   render() {
     const { friend } = this.state;
+    if (friend.experience == "") {
+      
+    }
     return (
       <div id="container_friend">
         <img src={friend.image} alt={`${friend.alias} image`}/>

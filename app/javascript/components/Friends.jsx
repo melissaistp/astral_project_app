@@ -34,7 +34,7 @@ class Friends extends React.Component {
                     transform:`rotate(${offsetAngle * index}deg) translate(0, -275px) rotate(-${offsetAngle * index}deg)`}}>
             <Link to={`/friend/${friend.id}`}>
               <img className="friendImage"
-                   src={friend.image}
+                   src={friend.experience}
                    style={{height: `${friend.likeability * 10}px`, width:`${friend.likeability * 10}px`}}
                    alt={`${friend.alias} image`}/>
             </Link>
