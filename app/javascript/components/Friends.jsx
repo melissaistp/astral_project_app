@@ -10,7 +10,7 @@ class Friends extends React.Component {
   }
 
   componentDidMount() {
-      const url = "/friends";
+      const url = "/api/v1/friends/index";
       fetch(url)
         .then(response => {
           if (response.ok) {
