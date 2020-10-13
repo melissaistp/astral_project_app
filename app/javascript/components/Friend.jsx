@@ -79,9 +79,10 @@ class Friend extends React.Component {
     } else if (friend.experience == "incomprehensible.png") {
       experienceText = "Truly incomprehensible";
     }
+    let imagePath = `https://theastralproject.herokuapp.com/${friend.experience}`;
     return (
       <div id="container_friend">
-        <img src={friend.experience} alt={`${friend.alias} image`}/>
+        <img src={imagePath} alt={`${friend.alias} image`}/>
         <p id="friendName">{friend.alias}</p>
         {friend.sign != null ?
           <p id="friendSign">Sign:<br/>{friend.sign}</p>
