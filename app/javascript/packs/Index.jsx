@@ -24,19 +24,22 @@ function addHomepageBackground() {
   }
 }
 
+let astralCode = "";
+
 function generateCode() {
-  let astralCode = "";
   let symbols = ["ᐉ", "⤕", "⍄", "ᗑ", "↭", "☟", "☚", "⥁", "⥀", "▦", "⍐", "↫", "❦", "ღ", "ტ", "ℙ", "℘", "₰", "†",
                  "𝖂", "ǭ", "✪", "★", "✸", "⊛", "❃", "⨷", "❖", "♔", "♘", "♚"];
   for (let i = 0; i < 10; i++) {
     let randomNumber = Math.floor(Math.random() * symbols.length);
     astralCode += symbols[randomNumber];
   }
+}
+
+function addCode() {
   if (document.querySelector("#code") != null) {
     document.querySelector("#code").textContent = astralCode;
   }
 }
-
 
 
 function weatherBallon( cityName ) {
@@ -73,9 +76,13 @@ window.onload = function () {
 
   //generates random astral plane code
   generateCode();
+  addCode();
 
   //generates friends weather pattern background
   //weatherBallon( "London" );
 
 }
 
+$(document).on("mouseover", "#container_allFriends", function(e) {
+  addCode();
+});

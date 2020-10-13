@@ -40,7 +40,6 @@ class Friends extends React.Component {
             </Link>
             <div className="profileBody">
               <Link to={`/friend/${friend.id}`}><h5 className="profileTitle">{friend.alias}</h5></Link> 
-              {/* <p>{friend.likeability}</p> */}
           </div>
         </div>
         :
@@ -63,42 +62,16 @@ class Friends extends React.Component {
 
           <div id="addFriendsText">
             <Link to="/friend" id="addFriend" role="button">Add a friend</Link><br/><br/>
-            to your astral plane by generating a new profile and sending them their profile code.
+            to your astral plane by generating a new profile and sending them your astral plane code and their profile alias.
             You have the ability to customize that person's dream experience and to kick them from your dreamscape
-            if you need to.
+            if you need to.<br/><br/>
+            Your astral plane code:<p id='code'></p>
           </div>
           <a href="https://theastralproject.herokuapp.com/" id="close" role="button">close connection</a>
           <div id="friendList">
               {friends.length > 0 ? allFriends : noFriend}
           </div>
-
-
         </div>
-
-        {/* <section className="jumbotron jumbotron-fluid text-center">
-          <div className="container py-5">
-            <h1 className="display-4">Friends</h1>
-            <p className="lead text-muted">
-              We’ve pulled together all of the friends that to whom you've given server access to your astral
-              plane. Sweet dreams!
-            </p>
-          </div>
-        </section>
-        <div className="py-5">
-          <main className="container">
-            <div className="text-right mb-3">
-              <Link to="/friend" className="btn custom-button">
-                Connect New Friend
-              </Link>
-            </div>
-            <div className="row">
-              {friends.length > 0 ? allFriends : noFriend}
-            </div>
-            <Link to="/" className="btn btn-link">
-              Home
-            </Link>
-          </main>
-        </div> */}
       </>
     );
   }
