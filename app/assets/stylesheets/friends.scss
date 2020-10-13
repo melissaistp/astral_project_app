@@ -61,6 +61,12 @@ Link {
     background-size: cover;
 }
 
+#close {
+    position: absolute;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
 .sunny {
     background-image: linear-gradient(to right top, #ff4e50, #ff713e, #ff932b, #ffb41d, #f9d423);
     //opacity: 0.5;
