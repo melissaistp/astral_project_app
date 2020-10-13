@@ -68,7 +68,7 @@ class Friends extends React.Component {
             if you need to.<br/><br/>
             Your astral plane code:<p id='code'></p>
           </div>
-          <a href="https://theastralproject.herokuapp.com/" id="close" role="button">close connection</a>
+          <Link to="/" id="close" role="button">close connection</Link>
           <div id="friendList">
               {friends.length > 0 ? allFriends : noFriend}
           </div>
