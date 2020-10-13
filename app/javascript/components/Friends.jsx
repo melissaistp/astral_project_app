@@ -22,9 +22,17 @@ class Friends extends React.Component {
         .catch(() => this.props.history.push("/"));
   }
 
+  
+
   render() {
     const { friends } = this.state;
     const offsetAngle = 360/(friends.length-1);
+    const setImage = function(experience) {
+      if (experience == "bad") {
+        return 'nightmare.png';
+      }
+    } 
+
     const allFriends = friends.map((friend, index) => (
       //formatting for regular friends
       friend.alias != "you" ?
@@ -34,7 +42,7 @@ class Friends extends React.Component {
                     transform:`rotate(${offsetAngle * index}deg) translate(0, -275px) rotate(-${offsetAngle * index}deg)`}}>
             <Link to={`/friend/${friend.id}`}>
               <img className="friendImage"
-                   src={friend.image}
+                   src={setImage(experience)}
                    style={{height: `${friend.likeability * 10}px`, width:`${friend.likeability * 10}px`}}
                    alt={`${friend.alias} image`}/>
             </Link>

@@ -7,7 +7,7 @@ class CreateFriends < ActiveRecord::Migration[6.0]
       t.string :experience, null: false
       t.text :message
       t.text :instruction
-      t.string :image, default: 'ghost.png'
+      t.string :image, default: '/ghost.png'
       t.timestamps
     end
   end
