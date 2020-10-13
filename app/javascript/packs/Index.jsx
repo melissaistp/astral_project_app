@@ -20,7 +20,7 @@ function addHomepageBackground() {
   let myPix = ['dreamscape.jpg', 'dreamscape2.jpg', 'dreamscape3.jpg'];
   let randomNumber = Math.floor(Math.random() * myPix.length);
   if (document.querySelector('#container_all') != null) {
-    document.querySelector('#container_all').style.backgroundImage = `url('public/${myPix[randomNumber]}')`;
+    document.querySelector('#container_all').style.backgroundImage = `url('/${myPix[randomNumber]}')`;
   }
 }
 
