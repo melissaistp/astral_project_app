@@ -65,19 +65,6 @@ class Friend extends React.Component {
 
   render() {
     const { friend } = this.state;
-    let experience = "No ingredients available";
-
-    // if (friend.ingredients.length > 0) {
-    //   ingredientList = recipe.ingredients
-    //     .split(",")
-    //     .map((ingredient, index) => (
-    //       <li key={index} className="list-group-item">
-    //         {ingredient}
-    //       </li>
-    //     ));
-    // }
-    // const recipeInstruction = this.addHtmlEntities(recipe.instruction);
-
     return (
       <div id="container_friend">
         <img src={friend.image} alt={`${friend.alias} image`}/>
@@ -97,45 +84,6 @@ class Friend extends React.Component {
         <div id="deleteButton" role="button" onClick={this.deleteFriend}>remove profile</div>
         <Link to="/friends" id="backToList">← back to list</Link>
       </div>
-      // <div className="">
-      //   <div className="hero position-relative d-flex align-items-center justify-content-center">
-      //     <img
-      //       src={friend.image}
-      //       alt={`${friend.alias} image`}
-      //       className="img-fluid position-absolute"
-      //     />
-      //     <div className="overlay bg-dark position-absolute" />
-      //     <h1 className="display-4 position-relative text-white">
-      //       {friend.alias}
-      //     </h1>
-      //   </div>
-      //   <div className="container py-5">
-      //     <div className="row">
-      //       {/* <div className="col-sm-12 col-lg-3">
-      //         <ul className="list-group">
-      //           <h5 className="mb-2">Ingredients</h5>
-      //           {ingredientList}
-      //         </ul>
-      //       </div> */}
-      //       {/* <div className="col-sm-12 col-lg-7">
-      //         <h5 className="mb-2">Instructions</h5>
-      //         <div
-      //           dangerouslySetInnerHTML={{
-      //             __html: `${friendInstruction}`
-      //           }}
-      //         />
-      //       </div> */}
-      //       <div className="col-sm-12 col-lg-2">
-      //         <button type="button" className="btn btn-danger" onClick={this.deleteFriend}>
-      //           Delete Connection
-      //         </button>
-      //       </div>
-      //     </div>
-      //     <Link to="/friends" className="btn btn-link">
-      //       Back to list
-      //     </Link>
-      //   </div>
-      // </div>
     );
   }
 }
