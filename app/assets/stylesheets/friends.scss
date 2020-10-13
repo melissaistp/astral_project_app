@@ -25,7 +25,7 @@ Link {
 }
 
 #addFriendsText {
-    width: 30vw;
+    width: 300px;
     font-size: 12px;
     position: fixed;
     color: white;
@@ -45,7 +45,7 @@ Link {
 
 #friendList {
    margin-left: -30px;
-   margin-top: -20px;
+   margin-top: -100px;
 }
 
 #hostProfile {
@@ -72,6 +72,7 @@ Link {
 
 #close {
     position: absolute;
+    right: 30px;
     bottom: 20px;
     padding: 5px 10px;
     text-align: center;

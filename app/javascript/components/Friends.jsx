@@ -31,7 +31,7 @@ class Friends extends React.Component {
         <div key={index}
             className="profile"
             style={{position: 'absolute',
-                    transform:`rotate(${offsetAngle * index}deg) translate(0, -275px) rotate(-${offsetAngle * index}deg)`}}>
+                    transform:`rotate(${offsetAngle * index}deg) translate(0, -250px) rotate(-${offsetAngle * index}deg)`}}>
             <Link to={`/friend/${friend.id}`}>
               <img className="friendImage"
                    src={friend.experience}
@@ -62,8 +62,9 @@ class Friends extends React.Component {
 
           <div id="addFriendsText">
             <Link to="/friend" id="addFriend" role="button">Add a friend</Link><br/><br/>
-            to your astral plane by generating a new profile and sending them your astral plane code and their profile alias.
-            You have the ability to customize that person's dream experience and to kick them from your dreamscape
+            to your astral plane by generating a new profile. Send them your astral plane code and their profile alias
+             to sleep with under their pillow.
+            You can customize that person's dream experience and even kick them from your dreamscape
             if you need to.<br/><br/>
             Your astral plane code:<p id='code'></p>
           </div>
