@@ -24,34 +24,60 @@ class Friends extends React.Component {
 
   render() {
     const { friends } = this.state;
+    const offsetAngle = 360/friends.length;
     const allFriends = friends.map((friend, index) => (
-      <div key={index} className="col-md-6 col-lg-4">
-        <div className="card mb-4">
-          <img
-            src={friend.image}
-            className="card-img-top"
-            alt={`${friend.alias} image`}
-          />
-          <div className="card-body">
-            <h5 className="card-title">{friend.alias}</h5>
-            <Link to={`/friend/${friend.id}`} className="btn custom-button">
-              View Friend Info
-            </Link>
-          </div>
+      
+      <div key={index}
+           className="profile"
+           style={{position: 'absolute',
+                   transform:`rotate(${offsetAngle * index}deg) translate(0, -300px) rotate(-${offsetAngle * index}deg)`}}>
+          <Link to={`/friend/${friend.id}`}><img className="friendImage" src={friend.image} alt={`${friend.alias} image`}/></Link>
+          <div className="profileBody">
+            <Link to={`/friend/${friend.id}`}><h5 className="profileTitle">{friend.alias}</h5></Link> 
         </div>
       </div>
+      // <div key={index} className="col-md-6 col-lg-4">
+      //   <div className="card mb-4">
+      //     <img
+      //       src={friend.image}
+      //       className="card-img-top"
+      //       alt={`${friend.alias} image`}
+      //     />
+      //     <div className="card-body">
+      //       <h5 className="card-title">{friend.alias}</h5>
+      //       <Link to={`/friend/${friend.id}`} className="btn custom-button">
+      //         View Friend Info
+      //       </Link>
+      //     </div>
+      //   </div>
+      // </div>
     ));
+
     const noFriend = (
       <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
         <h4>
-          No friends yet. Why not <Link to="/new_friend">connect one</Link>
         </h4>
       </div>
     );
 
     return (
       <>
-        <section className="jumbotron jumbotron-fluid text-center">
+        <div id="container_allFriends">
+
+          {/* <img src="assets/ghost.png" id="yourself"/> */}
+          <div id="addFriendsText">
+            <Link to="/friend" id="addFriend" role="button">Add a friend</Link><br/><br/>
+            to your astral plane by generating a new profile and sending them their profile code.
+            You have the ability to customize that person's dream experience and to kick them from your dreamscape
+            if you need to.
+          </div>
+
+          <div id="friendList">
+              {friends.length > 0 ? allFriends : noFriend}
+          </div>
+        </div>
+
+        {/* <section className="jumbotron jumbotron-fluid text-center">
           <div className="container py-5">
             <h1 className="display-4">Friends</h1>
             <p className="lead text-muted">
@@ -74,7 +100,7 @@ class Friends extends React.Component {
               Home
             </Link>
           </main>
-        </div>
+        </div> */}
       </>
     );
   }

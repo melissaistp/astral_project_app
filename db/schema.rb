@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_200530) do
     t.string "experience", null: false
     t.text "message"
     t.text "instruction"
-    t.string "image", default: 'https://lh3.googleusercontent.com/proxy/5Sk5o6g27JxOm1UDnAStlvYAEb3KqxhfVm9KZKMr7NlyScEFSJfjtW8sgvvpJYt9roKsWagYafmP2czg56tvFKDUwokOVDuL3pIRGM8'
+    t.string "image", default: "assets/ghost.png"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

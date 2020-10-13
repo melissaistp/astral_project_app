@@ -7,7 +7,7 @@ class CreateFriends < ActiveRecord::Migration[6.0]
       t.string :experience, null: false
       t.text :message
       t.text :instruction
-      t.string :image, default: 'https://lh3.googleusercontent.com/proxy/5Sk5o6g27JxOm1UDnAStlvYAEb3KqxhfVm9KZKMr7NlyScEFSJfjtW8sgvvpJYt9roKsWagYafmP2czg56tvFKDUwokOVDuL3pIRGM8'
+      t.string :image, default: 'assets/ghost.png'
       t.timestamps
     end
   end

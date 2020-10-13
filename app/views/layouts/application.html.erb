@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>Astral Project App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'homepage', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'friends', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'newfriend', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= javascript_pack_tag 'Index' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
     <%= yield %>
   </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </html>
