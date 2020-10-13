@@ -65,19 +65,30 @@ class Friend extends React.Component {
 
   render() {
     const { friend } = this.state;
-    if (friend.experience == "") {
-      
+    let experienceText = "";
+    if (friend.experience == "flying.png") {
+      experienceText = "Flying";
+    } else if (friend.experience == "flyingnightmare.png") {
+      experienceText = "Flying but nightmarish";
+    } else if (friend.experience == "realistic.png") {
+      experienceText = "Realistic";
+    } else if (friend.experience == "pleasant.png") {
+      experienceText = "Pleasant and plausible";
+    } else if (friend.experience == "pleasantincomp.png") {
+      experienceText = "Pleasant and incomprehensible";
+    } else if (friend.experience == "incomprehensible.png") {
+      experienceText = "Truly incomprehensible";
     }
     return (
       <div id="container_friend">
-        <img src={friend.image} alt={`${friend.alias} image`}/>
+        <img src={friend.experience} alt={`${friend.alias} image`}/>
         <p id="friendName">{friend.alias}</p>
         {friend.sign != null ?
           <p id="friendSign">Sign:<br/>{friend.sign}</p>
           :
           <p></p>
         }
-        Dream experience: <p id="friendExperience">{friend.experience}</p>
+        Dream experience: <p id="friendExperience">{experienceText}</p>
         {friend.message != null ?
           <p id="friendMessage">Personal message:<br/>{friend.message}</p>
           :

@@ -35,7 +35,7 @@ class Friends extends React.Component {
             <Link to={`/friend/${friend.id}`}>
               <img className="friendImage"
                    src={friend.experience}
-                   style={{height: `${friend.likeability * 10}px`, width:`${friend.likeability * 10}px`}}
+                   style={{height: `${friend.likeability * 10 +20}px`, width:`${friend.likeability * 10+20}px`}}
                    alt={`${friend.alias} image`}/>
             </Link>
             <div className="profileBody">
