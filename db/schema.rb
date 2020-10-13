@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_200530) do
   create_table "friends", force: :cascade do |t|
     t.string "alias", null: false
     t.string "sign"
-    t.string "likeability"
+    t.string "likeability", default: "5"
     t.string "experience", null: false
     t.text "message"
     t.text "instruction"

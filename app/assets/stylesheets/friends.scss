@@ -13,7 +13,7 @@ Link {
     z-index: -2;
     background-image: url('darkspace.jpg');
     background-size: cover;
-    font-family: "Cousine";
+    font-family: "Cousine", 'Courier New', Courier, monospace;
     color: white;
 }
 
@@ -30,7 +30,7 @@ Link {
     position: fixed;
     color: white;
     text-align: center;
-    font-family: "Cousine";
+    font-family: "Cousine", 'Courier New', Courier, monospace;
     font-size: 13px;
 }
 
@@ -44,8 +44,12 @@ Link {
 }
 
 #friendList {
-    margin-top: -80px;
-    margin-left: -100px;
+   margin-left: -30px;
+   margin-top: -20px;
+}
+
+#hostProfile {
+    opacity: 0;
 }
 
 .profile {
@@ -61,10 +65,20 @@ Link {
     background-size: cover;
 }
 
+.profileTitle {
+    color: white !important;
+    font-size: 14px;
+}
+
 #close {
     position: absolute;
-    align-self: flex-end;
-    right: 0;
+    bottom: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px black;
+    color: rgba(0,0,0,0.8);
+    font-size: 12px;
 }
 
 .sunny {

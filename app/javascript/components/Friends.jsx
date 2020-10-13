@@ -24,33 +24,33 @@ class Friends extends React.Component {
 
   render() {
     const { friends } = this.state;
-    const offsetAngle = 360/friends.length;
+    const offsetAngle = 360/(friends.length-1);
     const allFriends = friends.map((friend, index) => (
-      
-      <div key={index}
-           className="profile"
-           style={{position: 'absolute',
-                   transform:`rotate(${offsetAngle * index}deg) translate(0, -300px) rotate(-${offsetAngle * index}deg)`}}>
-          <Link to={`/friend/${friend.id}`}><img className="friendImage" src={friend.image} alt={`${friend.alias} image`}/></Link>
-          <div className="profileBody">
-            <Link to={`/friend/${friend.id}`}><h5 className="profileTitle">{friend.alias}</h5></Link> 
+      //formatting for regular friends
+      friend.alias != "you" ?
+        <div key={index}
+            className="profile"
+            style={{position: 'absolute',
+                    transform:`rotate(${offsetAngle * index}deg) translate(0, -275px) rotate(-${offsetAngle * index}deg)`}}>
+            <Link to={`/friend/${friend.id}`}>
+              <img className="friendImage"
+                   src={friend.image}
+                   style={{height: `${friend.likeability * 10}px`, width:`${friend.likeability * 10}px`}}
+                   alt={`${friend.alias} image`}/>
+            </Link>
+            <div className="profileBody">
+              <Link to={`/friend/${friend.id}`}><h5 className="profileTitle">{friend.alias}</h5></Link> 
+              {/* <p>{friend.likeability}</p> */}
+          </div>
         </div>
-      </div>
-      // <div key={index} className="col-md-6 col-lg-4">
-      //   <div className="card mb-4">
-      //     <img
-      //       src={friend.image}
-      //       className="card-img-top"
-      //       alt={`${friend.alias} image`}
-      //     />
-      //     <div className="card-body">
-      //       <h5 className="card-title">{friend.alias}</h5>
-      //       <Link to={`/friend/${friend.id}`} className="btn custom-button">
-      //         View Friend Info
-      //       </Link>
-      //     </div>
-      //   </div>
-      // </div>
+        :
+        //formatting for the host's profile
+        <div key={index} className="profile" id="hostProfile">
+            <img className="friendImage" src={friend.image} alt={`${friend.alias} image`}/>
+            <div className="profileBody">
+              <h5 className="profileTitle">{friend.alias}</h5>
+          </div>
+        </div>
     ));
 
     const noFriend = (
@@ -61,14 +61,13 @@ class Friends extends React.Component {
       <>
         <div id="container_allFriends">
 
-          {/* <img src="assets/ghost.png" id="yourself"/> */}
           <div id="addFriendsText">
             <Link to="/friend" id="addFriend" role="button">Add a friend</Link><br/><br/>
             to your astral plane by generating a new profile and sending them their profile code.
             You have the ability to customize that person's dream experience and to kick them from your dreamscape
             if you need to.
           </div>
-          <div id="close">close connection</div>
+          <a href="https://theastralproject.herokuapp.com/" id="close" role="button">close connection</a>
           <div id="friendList">
               {friends.length > 0 ? allFriends : noFriend}
           </div>

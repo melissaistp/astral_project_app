@@ -2,11 +2,90 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    //justify-content: center;
     width: 100vw;
     height: 100vh;
+    background-image: url('smoke.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    font-family: "Cousine", 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+#formTitle {
+    position: fixed;
+    left: 40px;
+    top: 30px;
+    font-size: 20px;
 }
 
 #newFriendForm {
     display: flex;
     flex-direction: column;
 }
+
+label {
+    margin-top: 30px;
+}
+
+input, textarea {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+#scale {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#radioButtons {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: center;
+
+}
+
+.radioCol {
+    display: flex;
+    flex-direction: column;
+   padding-right: 30px;
+}
+
+// .radioSet {
+//     //margin-bottom: 10px;
+//     height: 20px;
+//     background-color: red;
+//     //padding: -10px;
+//}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    border-radius: 0px;
+    margin-top: -6px;
+    cursor: pointer;
+    background:black;
+  }
+
+  #createConnection {
+      margin-top: 30px;
+      width: 200px;
+      align-self: center;
+  }
+
+  #backToFriends {
+      color: black !important;
+      text-decoration: underline;
+      position: fixed;
+      top: 100px;
+      left: 40px;
+  }

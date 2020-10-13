@@ -28,14 +28,18 @@ class NewFriend extends React.Component {
     onSubmit(event) {
       event.preventDefault();
       const url = "/api/v1/friends/create";
-      const { alias, experience } = this.state; //add other params here?
+      const { alias, experience, likeability, sign, image, message } = this.state; //add other params here?
   
       if (alias.length == 0 || experience.length == 0 ) //include checks for other params?
         return;
   
       const body = {
         alias,
-        experience
+        experience,
+        likeability,
+        sign,
+        image,
+        message
        // instruction: instruction.replace(/\n/g, "<br> <br>")
       };
   
@@ -54,21 +58,56 @@ class NewFriend extends React.Component {
           }
           throw new Error("Network response was not ok.");
         })
-        .then(response => this.props.history.push(`/friend/${response.id}`))
+        .then(response => this.props.history.push(`/friends`))
         .catch(error => console.log(error.message));
     }
   
     render() {
       return (
         <div id="container_newFriend">
-          <h1>Add a new friend to your server</h1>
+          <h1 id="formTitle">Add a new friend<br/>to your server</h1>
+          <Link to="/friends" id="backToFriends">Back to friends</Link>
 
           <form id="newFriendForm" onSubmit={this.onSubmit}>
-            <label htmlFor="friendAlias">Friend's name (required)</label>
+            <label htmlFor="friendAlias">Friend's alias *</label>
             <input type="text" name="alias" id="friendAlias" required onChange={this.onChange}/>
 
-            <label htmlFor="friendExperience">Experience (required)</label>
-            <input type="text" name="experience" id="friendExperience" required onChange={this.onChange}/>
+
+            <label htmlFor="friendExperience">Experience within the dream *</label>
+            <div id="radioButtons">
+              <div className="radioCol">
+                <div className="radioSet">
+                  <input type="radio" name="experience" id="friendExperience" value="realistic" required onChange={this.onChange}/>
+                  <label for="realistic">Realistic</label>
+                </div>
+                <div className="radioSet">
+                  <input type="radio" name="experience" id="friendExperience" value="pleasant" required onChange={this.onChange}/>
+                  <label for="pleasant">Pleasant and plausible</label>
+                </div>
+                <div className="radioSet">
+                  <input type="radio" name="experience" id="friendExperience" value="pleasantIncomp" required onChange={this.onChange}/>
+                  <label for="pleasantIncomp">Pleasant and incomprehensible</label>
+                </div>
+                <div>
+                  <input type="radio" name="experience" id="friendExperience" value="incomprehensible" required onChange={this.onChange}/>
+                  <label for="incomprehensible">Truly incomprehensible</label>
+                </div>
+              </div>
+              <div className="radioCol">
+                <div className="radioSet">
+                  <input type="radio" name="experience" id="friendExperience" value="flying" required onChange={this.onChange}/>
+                  <label for="flying">Flying</label>
+                </div>
+                <div className="radioSet">
+                  <input type="radio" name="experience" id="friendExperience" value="flyingNightmare" required onChange={this.onChange}/>
+                  <label for="flyingNightmare">Flying but nightmarish</label>
+                </div>
+                <div className="radioSet">
+                  <input type="radio" name="experience" id="friendExperience" value="bad" required onChange={this.onChange}/>
+                  <label for="bad">Honestly just bad</label>
+                </div>
+              </div>
+            </div>
 
             <label htmlFor="friendSign">Sign</label>
             <input list="signList" name="sign" id="friendSign" onChange={this.onChange}/>
@@ -87,16 +126,15 @@ class NewFriend extends React.Component {
               <option value="Pisces"/>
             </datalist>
 
-            <label htmlFor="friendLikeability">How close are you to this person?</label>
-            <input type="range" min="0" max="10" value="5" name="likeability" id="friendLikeability" onChange={this.onChange}/>
+            <label htmlFor="friendLikeability">How close are you to this person?<p id="scale">Not so close ⟵⟶ Quite close</p></label>
+            <input type="range" min="0" max="10" name="likeability" id="friendLikeability" onChange={this.onChange}/>
 
             <label htmlFor="friendMessage">Personalized message for your friend upon entry to the dream</label>
-            <textarea name="message" id="friendMessage" rows="5" cols="50" onChange={this.onChange}/>
-            <button type="submit" className="btn custom-button mt-3">
+            <textarea name="message" id="friendMessage" rows="3" cols="50" onChange={this.onChange}/>
+            <button type="submit" id="createConnection">
               Create Connection
             </button>
           </form>
-          <Link to="/friends" className="btn btn-link mt-3">Back to friends</Link>
         </div>
         // <div className="container mt-5">
         //   <div className="row">

@@ -1,9 +1,8 @@
 Friend.create(
   alias: "you",
   sign: "Taurus",
-  likeability: "Close friend",
+  likeability: "5",
   experience: "Flying dream",
   message: "Hope you're having a good time",
-  instruction: "Make this person suffer",
   image: "/ghost.png"
 )
