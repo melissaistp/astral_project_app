@@ -54,10 +54,7 @@ class Friends extends React.Component {
     ));
 
     const noFriend = (
-      <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
-        <h4>hello
-        </h4>
-      </div>
+      <div></div>
     );
 
     return (
@@ -71,7 +68,7 @@ class Friends extends React.Component {
             You have the ability to customize that person's dream experience and to kick them from your dreamscape
             if you need to.
           </div>
-          {/* <div id="close">close connection</div> */}
+          <div id="close">close connection</div>
           <div id="friendList">
               {friends.length > 0 ? allFriends : noFriend}
           </div>
