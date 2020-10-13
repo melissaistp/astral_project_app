@@ -82,7 +82,7 @@ class Friend extends React.Component {
     let imagePath = `https://theastralproject.herokuapp.com/${friend.experience}`;
     return (
       <div id="container_friend">
-        <img src={imagePath} alt={`${friend.alias} image`}/>
+        <img src={imagePath} style={{height: "100px", width:"100px"}}alt={`${friend.alias} image`}/>
         <p id="friendName">{friend.alias}</p>
         {friend.sign != null ?
           <p id="friendSign">Sign:<br/>{friend.sign}</p>
