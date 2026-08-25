@@ -78,7 +78,7 @@ GEM
       logger
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    logger (1.7.0)
+    logger (1.5.3)
     loofah (2.25.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -108,6 +108,7 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     pg (1.6.3)
+    pg (1.6.3-x86_64-linux)
     puma (4.3.12)
       nio4r (~> 2.0)
     racc (1.8.1)
@@ -196,12 +197,14 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  logger (~> 1.5.3)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
