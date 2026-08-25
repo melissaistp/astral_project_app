@@ -2,12 +2,15 @@
 
 ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
 ENV["NODE_ENV"]  ||= "development"
+# webpack 4's createHash uses MD4, which OpenSSL 3 (Node 17+) disabled by default.
+ENV["NODE_OPTIONS"] = "#{ENV["NODE_OPTIONS"]} --openssl-legacy-provider".strip
 
 require "pathname"
 ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
   Pathname.new(__FILE__).realpath)
 
 require "bundler/setup"
+require "logger" # ActiveSupport::LoggerThreadSafeLevel needs Logger already defined; not guaranteed on Ruby 3.1+.
 
 require "webpacker"
 require "webpacker/dev_server_runner"
